@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: meu-cronjob
+spec:
+  schedule: "*/1 * * * *"  # Executa a cada minuto
+  jobTemplate:
+    spec:
+      ttlSecondsAfterFinished: 60  # Remove o Job após 60 segundos
+      completions: 2
+      parallelism: 2
+      backoffLimit: 2
+      template:
+        metadata:
+          labels:
+            app: sorteador
+        spec:
+          containers:
+          - name: sorteador
+            image: fabricioveronez/sorteador:v1
+            env:
+              - name: NUM_ESCOLHIDO
+                value: "5"
+              - name: NUM_MAXIMO
+                value: "4"
+              - name: DELAY_SORTEIO
+                value: "10"
+          restartPolicy: Never
