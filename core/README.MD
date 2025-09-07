@@ -21,7 +21,8 @@ kubectl rollout undo deployment meudeployment
 # criar cluster com Load Balancer, para isso usar nodeport
 k3d cluster create meucluster --servers 3 --agents 3 -p "30000:30000@loadbalancer"
 
-
+# criar namespace
+kubectl create namespace nginx
 
 
 

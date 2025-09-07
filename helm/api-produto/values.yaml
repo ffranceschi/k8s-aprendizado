@@ -1,0 +1,9 @@
+mongodb:
+  tag: "4.4.6"
+  credentials:
+    username: "mongouser"
+    password: "mongouser"
+  databaseName: "admin"
+api:
+  image: "fabricioveronez/api-produto:v1.0.0"
+  serviceType: "LoadBalancer"  # Opções: ClusterIP, NodePort, LoadBalancer
