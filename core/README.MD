@@ -1,6 +1,11 @@
 
 LB -> service -> deployments -> replicaSet-> pods
 
+# comandos kubectl
+kubectl top nodes
+kubectl top pods
+kubectl get hpa
+
 # subir um pod para Troubleshooting
 kubectl run prompt -it --image ubuntu -- /bin/bash
 

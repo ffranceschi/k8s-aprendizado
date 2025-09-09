@@ -17,5 +17,7 @@ helm create api-produto
 
 
 # Para instalar o heml criado da pasta api-produto
-helm install minhapi ./api-produto
+helm install minhaapi ./api-produto
 
+helm list
+helm uninstall minhapi
