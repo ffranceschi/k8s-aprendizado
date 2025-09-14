@@ -1,0 +1,12 @@
+server:
+  service:
+    type: LoadBalancer
+
+alertmanager:
+  enabled: false
+
+prometheus-node-exporter:
+  enabled: false
+
+prometheus-pushgateway:
+  enabled: false
