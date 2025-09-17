@@ -1,13 +1,14 @@
 
 LB -> service -> deployments -> replicaSet-> pods
 
-# comandos kubectl
+# comandos kubectl, utilizar o -w para watch
 kubectl top nodes
 kubectl top pods
 kubectl get hpa
 
 # subir um pod para Troubleshooting
 kubectl run prompt -it --image ubuntu -- /bin/bash
+kubectl run --image alpine --rm -it demo sh
 
 # redirecionar porta
 kubectl port-forward service/webcolor
@@ -28,6 +29,14 @@ k3d cluster create meucluster --servers 3 --agents 3 -p "30000:30000@loadbalance
 
 # criar namespace
 kubectl create namespace nginx
+
+# maneira simples de criar um pod
+kubectl run --image httpd nome_pod --dry-run=client -o yaml | kubectl neat > manifesto.yaml
+
+
+
+
+
 
 
 
