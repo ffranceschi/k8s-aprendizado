@@ -1,6 +1,11 @@
 
 LB -> service -> deployments -> replicaSet-> pods
 
+# comandos para ver a estrutura do yaml
+kubectl explain deployment
+kubectl explain deployment.spec
+kubectl explain deployment.spec.template.spec.containers
+
 # comandos kubectl, utilizar o -w para watch
 kubectl top nodes
 kubectl top pods
@@ -32,6 +37,8 @@ kubectl create namespace nginx
 
 # maneira simples de criar um pod
 kubectl run --image httpd nome_pod --dry-run=client -o yaml | kubectl neat > manifesto.yaml
+
+# Static pod (aqueles que nao tem os numeros randomicos) o arquivo fica fisicamente no /etc/kubernetes onde fica os manifestos dos static pods
 
 
 
