@@ -16,3 +16,5 @@ spec:
       containers:
       - image: nginx
         name: nginx
+      nodeSelector:
+        kubernetes.io/os: worker-1
