@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: kube-board-network-policy
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: kube-board
+  ingress:
+  - from:
+    - podSelector: 
+      matchLabels:
+        app: kube-board
+    ports:
+    - protocol: TCP
+      port: 3000
