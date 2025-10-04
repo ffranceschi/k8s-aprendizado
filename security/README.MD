@@ -11,3 +11,4 @@ kubectl get sa -n default
 
 # verificar se o service account vinculado ao pod
 k describe pod meudeployment-79fdbbf57d-smpqg
+
