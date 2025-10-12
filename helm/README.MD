@@ -21,3 +21,16 @@ helm install minhaapi ./api-produto
 
 helm list
 helm uninstall minhapi
+
+
+# Adicionar o repositorio bitnami
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm search repo mysql
+
+helm install mydb bitnami/mysql --set auth.rootPassword=test1234
+
+comando --dry-run para teste de instalacao
+helm install mydb bitnami/mysql --set auth.rootPassword=test1234 --dry-run
+
+
+
