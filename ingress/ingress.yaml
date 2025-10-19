@@ -6,13 +6,23 @@ metadata:
     ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - host: api.localdev.me
+  - host: green.localdev.me
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: webcolor
+            name: webcolor-green
             port:
-              number: 80
+              number: 8080
+  - host: blue.localdev.me
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: webcolor-blue
+            port:
+              number: 8080

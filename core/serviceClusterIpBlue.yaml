@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: meudeployment
+  name: meudeploymentblue
 spec:
   replicas: 4
   selector:
     matchLabels:
-      app: web-green
+      app: web-blue
   template:
     metadata:
       labels:
-        app: web-green
+        app: web-blue
     spec:
       containers:
-      - name: web-green
-        image: kubedevio/web-color:green
+      - name: web-blue
+        image: kubedevio/web-color:blue
         ports:
           - name: http
             containerPort: 80
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata: 
-  name: webcolor-green
+  name: webcolor-blue
 spec:
   type: ClusterIP
   selector:
-    app: web-green
+    app: web-blue
   ports:
     - protocol: TCP
       port: 8080
