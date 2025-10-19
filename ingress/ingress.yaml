@@ -2,9 +2,11 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: meu-ingress
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - host: meuapp.local
+  - host: api.localdev.me
     http:
       paths:
       - path: /
@@ -13,4 +15,4 @@ spec:
           service:
             name: webcolor
             port:
-              number: 8080
+              number: 80

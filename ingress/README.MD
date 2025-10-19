@@ -9,3 +9,14 @@ kind create cluster --name meucluster --config kind-config.yaml
 
 # kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.13.2/deploy/static/provider/baremetal/deploy.yaml
 
+----
+# Fazer com o K3d
+adicionar entrada no /etc/hosts 
+127.0.0.1 api.localdev.me
+
+k3d cluster create --api-port 6550 -p "30000:80@loadbalancer"
+subir o arquivo core/serviceClusterIp.yaml
+kubectl apply -f core/serviceClusterIp.yaml
+kubectl apply -f ingress/ingress.yaml
+
+curl http://api.localdev.me:30000
