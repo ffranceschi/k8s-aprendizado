@@ -1,5 +1,5 @@
 
-LB -> service -> deployments -> replicaSet-> pods
+LB -> ingress -> service -> deployments -> replicaSet-> pods
 
 # comandos para ver a estrutura do yaml
 kubectl explain deployment
@@ -41,9 +41,9 @@ kubectl run --image httpd nome_pod --dry-run=client -o yaml | kubectl neat > man
 # Static pod (aqueles que nao tem os numeros randomicos) o arquivo fica fisicamente no /etc/kubernetes onde fica os manifestos dos static pods
 
 
-
-
-
+# expor endpoint de acesso ao servico do tipo ClusterIp
+kubectl get endpoints webcolor-green
+k expose deployment meudeployment --port=8080 --target-port=80 --type ClusterIP
 
 
 

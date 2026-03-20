@@ -2,7 +2,7 @@ Ingress é a forma de expor os serviços para fora do kubernetes
 ingress -> ingress controller -> service -> deployments -> replica set - > pod
 
 # Criar cluster no kind 
-kind create cluster --name meucluster --config kind-config.yaml
+kind create cluster --name meu-cluster --config kind-config.yaml
 
 # Site https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/
 

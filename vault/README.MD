@@ -15,23 +15,23 @@ vault status
 vault operator init
 
 # Saida deve parecer com isso
-Unseal Key 1: pXdaMGoRfCziORaap/jnpBHLYYgwzpPokwfiEzmcSfS1
-Unseal Key 2: I5W8N7p9rh4YgOeOcruJORiqz+2DcA5xOv8Hc4vbdcld
-Unseal Key 3: +R7SJGLZ/+AA99U4G29qEFDhvYOz2OSlPHFLuEKA5apt
-Unseal Key 4: 8jMeZtgx08zwunb5foWKZov8lWoefCVVGbjoV2rtY0jF
-Unseal Key 5: IFBx4l4t9u82tZ1vdwYqgP//SDfASGF+wrdxqfFdIlpR
+Unseal Key 1: S6rYAT3WI/x3K6oNCfmlU0PrkxdADtvm0Bx1AqH/qpQh
+Unseal Key 2: 9aPDxB0lk+XX6QgSECv4oemCuRaZD7Qmv4Qjd4m/b5BS
+Unseal Key 3: PmxlZZ+BQ1Hux4/DoLqDfBAvJWdE/1bQy8mEUqhhF7Nb
+Unseal Key 4: 0UEYolcGNPMUZsjFiacSX2v9gM4F4tHTxXKDGxw2GzG3
+Unseal Key 5: IGfYYiOyqDZJoYier63jLtjOtNaM+wT90fwvt7dtFFqU
 
-Initial Root Token: hvs.eFF1x2faszZyFnhkLDRtka6O
+Initial Root Token: hvs.FnvCrDgJ89An8bSyzUgKbznu
 
 # precisa exportar para dar comando no vault o token root
-export VAULT_TOKEN="hvs.eFF1x2faszZyFnhkLDRtka6O"
+export VAULT_TOKEN="hvs.FnvCrDgJ89An8bSyzUgKbznu"
 
 # deslacrar o cofre precisa rodar 3x com chaves de unseal distintas
 vault operator unseal
 
 # logar com token root
 vault login <token>
-vault login hvs.eFF1x2faszZyFnhkLDRtka6O
+vault login hvs.FnvCrDgJ89An8bSyzUgKbznu
 
 
 
